@@ -32,4 +32,16 @@ public class Event implements Entity<Event> {
     public int getAvailableCapacity() {
         return capacity.getAvailableCapacity();
     }
+
+    public ReservationAttempt makeReservation(Reservation reservation) {
+        if (!reservation.isValid()) {
+            throw new IllegalArgumentException("Reservation is invalid and can not be processed");
+        }
+
+        if (reservation.getRequestedCapacity() > this.capacity.getAvailableCapacity()) {
+            return new ReservationAttempt(ReservationAttemptStatus.FAILED, "Event is sold out");
+        }
+
+        return new ReservationAttempt(ReservationAttemptStatus.SUCCESS);
+    }
 }
