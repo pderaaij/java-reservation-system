@@ -1,4 +1,35 @@
 package nl.paulderaaij.reservation.domain.events;
 
-public class Event {
+import nl.paulderaaij.reservation.domain.shared.Entity;
+
+import java.time.LocalDate;
+
+public class Event implements Entity<Event> {
+
+    private EventId id;
+    private Title title;
+    private LocalDate eventDate;
+    private Capacity capacity;
+
+    public Event(EventId eventId, Title title, LocalDate date) {
+        if (eventId == null) {
+            throw new IllegalArgumentException("Event ID can't be null");
+        }
+
+        this.id = eventId;
+        this.title = title;
+        this.eventDate = date;
+    }
+
+    public void assignCapacity(Capacity capacity) {
+        if (capacity.hasNonAvailable()) {
+            throw new IllegalArgumentException("Can assign empty capacity to this event");
+        }
+
+        this.capacity = capacity;
+    }
+
+    public int getAvailableCapacity() {
+        return capacity.getAvailableCapacity();
+    }
 }
