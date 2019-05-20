@@ -42,6 +42,6 @@ public class Event implements Entity<Event> {
             return new ReservationAttempt(ReservationAttemptStatus.FAILED, "Event is sold out");
         }
 
-        return new ReservationAttempt(ReservationAttemptStatus.SUCCESS);
+        return new ReservationAttempt(ReservationAttemptStatus.SUCCESS, "Here are your tickets");
     }
 }

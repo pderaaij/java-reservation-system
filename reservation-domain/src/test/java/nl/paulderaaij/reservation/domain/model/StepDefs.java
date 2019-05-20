@@ -1,5 +1,6 @@
 package nl.paulderaaij.reservation.domain.model;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -18,8 +19,8 @@ public class StepDefs {
         this.capacity = capacity;
     }
 
-    @When("I try to make reservation")
-    public void i_try_to_make_reservation() {
+    @When("I try to make a reservation")
+    public void i_try_to_make_a_reservation() {
         Event event = new Event(
                 new EventId(UUID.randomUUID()),
                 new Title("Test"),
@@ -39,5 +40,15 @@ public class StepDefs {
     @Then("tells me the event is sold out")
     public void tells_me_the_event_is_sold_out() {
         Assertions.assertEquals("Event is sold out", this.attempt.getReason());
+    }
+
+    @Then("It successfully process my reservation")
+    public void itSuccessfullyProcessMyReservation() {
+        Assertions.assertEquals(ReservationAttemptStatus.SUCCESS, this.attempt.getStatus());
+    }
+
+    @And("tells me I have bought tickets for the event")
+    public void tellsMeIHaveBoughtTicketsForTheEvent() {
+        Assertions.assertEquals("Here are your tickets", this.attempt.getReason());
     }
 }

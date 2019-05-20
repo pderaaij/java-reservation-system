@@ -1,9 +1,6 @@
 package nl.paulderaaij.reservation.domain.model;
 
-import nl.paulderaaij.reservation.domain.events.Capacity;
-import nl.paulderaaij.reservation.domain.events.Event;
-import nl.paulderaaij.reservation.domain.events.EventId;
-import nl.paulderaaij.reservation.domain.events.Title;
+import nl.paulderaaij.reservation.domain.events.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,9 +21,31 @@ public class EventTest {
     }
 
     @Test
-    public void testFullCapacityWithoutAnyReservations() {
+    public void testReserveForAnEventWithCapacityIsSuccessful() {
         eventUnderTest.assignCapacity(new Capacity(50));
-
+        ReservationAttempt reservationAttempt = eventUnderTest.makeReservation(new Reservation(4));
         Assertions.assertEquals(50, eventUnderTest.getAvailableCapacity());
+        Assertions.assertEquals(ReservationAttemptStatus.SUCCESS, reservationAttempt.getStatus());
+    }
+
+    @Test
+    public void testReserveForAnEventWithoutCapacityFails() {
+        eventUnderTest.assignCapacity(new Capacity(2));
+        ReservationAttempt reservationAttempt = eventUnderTest.makeReservation(new Reservation(4));
+
+        Assertions.assertEquals(ReservationAttemptStatus.FAILED, reservationAttempt.getStatus());
+        Assertions.assertEquals("Event is sold out", reservationAttempt.getReason());
+    }
+
+    @Test
+    public void testInvalidReservationThrowsException() {
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                eventUnderTest.makeReservation(new Reservation(0))
+        );
+    }
+
+    @Test
+    public void testAssigningACapacityOfZeroThrowsException() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> eventUnderTest.assignCapacity(new Capacity(0)));
     }
 }
