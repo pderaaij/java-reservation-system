@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52a721da-1e86-457e-8c70-8172b454b8be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/reservation-domain/src/test/resources/nl/paulderaaij/reservation/domain/model/reserve_tickets_for_event.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/application/ReservationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/domain/events/EventRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/application/ReservationServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/helpers/A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/helpers/EventBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/domain/events/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/domain/events/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/EventTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/EventTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/StepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/StepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation-domain/src/test/resources/nl/paulderaaij/reservation/domain/model/event_has_non_available_capacity.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reservation-domain/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation-domain/reservation-domain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/reservation-domain/reservation-domain.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/reservation-domain/target/" />
@@ -22,7 +24,7 @@
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="323" />
+    <option name="myElementSize" value="345" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -44,22 +46,33 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/RunCucumberTest.java">
+        <entry file="file://$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/domain/events/EventRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="168">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/application/ReservationService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#437#438#0" expanded="true" />
+                <element signature="e#491#492#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/EventTest.java">
+        <entry file="file://$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/application/ReservationServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="48" column="118" selection-end-line="50" selection-end-column="1" />
+            <state relative-caret-position="357">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,10 +81,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/domain/events/Event.java">
+        <entry file="file://$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/helpers/A.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+            <state relative-caret-position="189">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/helpers/EventBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="518">
+              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,8 +109,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -94,6 +119,7 @@
     <findStrings>
       <find>taco</find>
       <find>libraries</find>
+      <find>new Event(eventId, new Title(&quot;test&quot;), LocalDate.now())</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -115,7 +141,6 @@
         <option value="$PROJECT_DIR$/reservation-domain/src/test/resources/events/event_has_non_available_capacity.feature" />
         <option value="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/RunCucumberTests.java" />
         <option value="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/RunCucumberTest.java" />
-        <option value="$PROJECT_DIR$/reservation-domain/pom.xml" />
         <option value="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/ReservationAttemptStatus.java" />
         <option value="$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/domain/events/Reservation.java" />
         <option value="$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/domain/events/ReservationAttemptStatus.java" />
@@ -125,6 +150,13 @@
         <option value="$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/domain/events/Event.java" />
         <option value="$PROJECT_DIR$/reservation-domain/src/test/resources/nl/paulderaaij/reservation/domain/model/reserve_tickets_for_event.feature" />
         <option value="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/EventTest.java" />
+        <option value="$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/domain/events/EventRepository.java" />
+        <option value="$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/application/ReservationService.java" />
+        <option value="$PROJECT_DIR$/reservation-domain/pom.xml" />
+        <option value="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/A.java" />
+        <option value="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/helpers/A.java" />
+        <option value="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/helpers/EventBuilder.java" />
+        <option value="$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/application/ReservationServiceTest.java" />
       </list>
     </option>
   </component>
@@ -194,17 +226,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-reservation-system" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-reservation-system" type="462c0819:PsiDirectoryNode" />
-              <item name="reservation-domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="events" type="462c0819:PsiDirectoryNode" />
+              <item name="reservation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java-reservation-system" type="b2602c69:ProjectViewProjectNode" />
@@ -228,7 +250,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="reservation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java-reservation-system" type="b2602c69:ProjectViewProjectNode" />
@@ -236,16 +258,9 @@
               <item name="reservation-domain" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-reservation-system" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-reservation-system" type="462c0819:PsiDirectoryNode" />
-              <item name="reservation-domain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="reservation" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -292,7 +307,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.nl.paulderaaij.reservation.domain.model in reservation-domain">
+  <component name="RunManager" selected="JUnit.application tests">
     <configuration name="RunCucumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="reservation-domain" />
       <extension name="coverage">
@@ -304,6 +319,25 @@
       <option name="PACKAGE_NAME" value="nl.paulderaaij.reservation.domain.model" />
       <option name="MAIN_CLASS_NAME" value="nl.paulderaaij.reservation.domain.model.RunCucumberTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="application tests" type="JUnit" factoryName="JUnit">
+      <module name="reservation-domain" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.paulderaaij.reservation.helpers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="PACKAGE_NAME" value="nl.paulderaaij.reservation.application" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -326,6 +360,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.application tests" />
       <item itemvalue="JUnit.nl.paulderaaij.reservation.domain.model in reservation-domain" />
       <item itemvalue="JUnit.RunCucumberTest" />
     </list>
@@ -351,32 +386,11 @@
       <workItem from="1558032961231" duration="1718000" />
       <workItem from="1558091759360" duration="2472000" />
       <workItem from="1558094250409" duration="3059000" />
-      <workItem from="1558371800472" duration="1830000" />
+      <workItem from="1558371800472" duration="6354000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RunCucumberTest - 2019.05.20 at 19h 14m 35s.xml">
-      <configuration name="RunCucumberTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="EventTest - 2019.05.20 at 19h 19m 21s.xml">
-      <configuration name="EventTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="nl_paulderaaij_reservation_domain_model_in_reservation-domain - 2019.05.20 at 19h 20m 03s.xml">
-      <configuration name="nl.paulderaaij.reservation.domain.model in reservation-domain" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="nl_paulderaaij_reservation_domain_model_in_reservation-domain - 2019.05.20 at 19h 21m 27s.xml">
-      <configuration name="nl.paulderaaij.reservation.domain.model in reservation-domain" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="nl_paulderaaij_reservation_domain_model_in_reservation-domain - 2019.05.20 at 19h 25m 45s.xml">
-      <configuration name="nl.paulderaaij.reservation.domain.model in reservation-domain" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="nl_paulderaaij_reservation_domain_model_in_reservation-domain - 2019.05.20 at 19h 30m 23s.xml">
-      <configuration name="nl.paulderaaij.reservation.domain.model in reservation-domain" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="nl_paulderaaij_reservation_domain_model_in_reservation-domain - 2019.05.20 at 19h 30m 48s.xml">
-      <configuration name="nl.paulderaaij.reservation.domain.model in reservation-domain" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="nl_paulderaaij_reservation_domain_model_in_reservation-domain - 2019.05.20 at 19h 32m 12s.xml">
       <configuration name="nl.paulderaaij.reservation.domain.model in reservation-domain" configurationId="JUnit" />
     </history-entry>
@@ -386,15 +400,36 @@
     <history-entry file="nl_paulderaaij_reservation_domain_model_in_reservation-domain - 2019.05.20 at 19h 32m 31s.xml">
       <configuration name="nl.paulderaaij.reservation.domain.model in reservation-domain" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="nl_paulderaaij_reservation_domain_model_in_reservation-domain - 2019.05.20 at 19h 33m 55s.xml">
+      <configuration name="nl.paulderaaij.reservation.domain.model in reservation-domain" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="nl_paulderaaij_reservation_domain_model_in_reservation-domain - 2019.05.20 at 19h 39m 00s.xml">
+      <configuration name="nl.paulderaaij.reservation.domain.model in reservation-domain" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="nl_paulderaaij_reservation_domain_model_in_reservation-domain - 2019.05.20 at 20h 22m 28s.xml">
+      <configuration name="nl.paulderaaij.reservation.domain.model in reservation-domain" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="application_tests - 2019.05.20 at 20h 24m 17s.xml">
+      <configuration name="application tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="application_tests - 2019.05.20 at 20h 24m 29s.xml">
+      <configuration name="application tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="application_tests - 2019.05.20 at 20h 54m 44s.xml">
+      <configuration name="application tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="application_tests - 2019.05.20 at 20h 56m 10s.xml">
+      <configuration name="application tests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11642000" />
+    <option name="totallyTimeSpent" value="16166000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1019" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26307365" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20917822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -403,7 +438,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32911393" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32911393" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -430,7 +465,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/java_reservation_system$nl_paulderaaij_reservation_domain_model_in_reservation_domain.ic" NAME="nl.paulderaaij.reservation.domain.model in reservation-domain Coverage Results" MODIFIED="1558373549959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/java_reservation_system$nl_paulderaaij_reservation_domain_model_in_reservation_domain.ic" NAME="nl.paulderaaij.reservation.domain.model in reservation-domain Coverage Results" MODIFIED="1558373939081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.paulderaaij.reservation.domain.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/java_reservation_system$EventTest.ic" NAME="EventTest Coverage Results" MODIFIED="1558372760551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -493,13 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reservation-domain/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="73" column="30" selection-start-line="73" selection-start-column="30" selection-end-line="73" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -577,6 +605,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/EventTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/RunCucumberTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -597,10 +635,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/domain/model/EventTest.java">
+    <entry file="file://$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/domain/events/EventRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="48" column="118" selection-end-line="50" selection-end-column="1" />
+        <state relative-caret-position="168">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reservation-domain/src/main/java/nl/paulderaaij/reservation/application/ReservationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reservation-domain/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/helpers/A.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/helpers/EventBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reservation-domain/src/test/java/nl/paulderaaij/reservation/application/ReservationServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
