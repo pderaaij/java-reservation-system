@@ -16,7 +16,7 @@ public class DevelopmentConfig {
     public CommandLineRunner dataLoader(EventRepository eventRepository) {
         return args -> {
             Event event = new Event(
-                    UUID.randomUUID(),
+                    UUID.fromString("f67270e4-00e5-4a37-b5d4-a2ee642e7e68"),
                     "Test event",
                     50,
                     LocalDate.now()

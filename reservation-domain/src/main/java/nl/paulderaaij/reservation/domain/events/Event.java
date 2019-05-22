@@ -1,10 +1,11 @@
 package nl.paulderaaij.reservation.domain.events;
 
+import nl.paulderaaij.reservation.domain.shared.Aggregate;
 import nl.paulderaaij.reservation.domain.shared.Entity;
 
 import java.time.LocalDate;
 
-public class Event implements Entity<Event> {
+public class Event extends Aggregate implements Entity<Event> {
 
     private EventId id;
     private Title title;
@@ -42,6 +43,7 @@ public class Event implements Entity<Event> {
             return new ReservationAttempt(ReservationAttemptStatus.FAILED, "Event is sold out");
         }
 
+        this.raiseEvent(new ReservationForEventPlaced(reservation));
         return new ReservationAttempt(ReservationAttemptStatus.SUCCESS, "Here are your tickets");
     }
 }

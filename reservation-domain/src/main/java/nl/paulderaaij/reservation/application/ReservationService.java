@@ -5,7 +5,7 @@ import nl.paulderaaij.reservation.domain.events.*;
 import java.util.Optional;
 
 public class ReservationService {
-    EventRepository eventRepository;
+    private EventRepository eventRepository;
 
     public ReservationService(EventRepository eventRepository) {
         this.eventRepository = eventRepository;
@@ -20,6 +20,9 @@ public class ReservationService {
 
         var event = optionalEvent.get();
 
-        return event.makeReservation(new Reservation(requestedTickets));
+        ReservationAttempt reservationAttempt = event.makeReservation(new Reservation(requestedTickets));
+
+        eventRepository.store(event);
+        return reservationAttempt;
     }
 }
