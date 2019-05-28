@@ -17,5 +17,6 @@
     <modules>
         <module>reservation-domain</module>
         <module>reservation-infrastructure</module>
+        <module>reservation-ui</module>
     </modules>
 </project>

@@ -23,6 +23,15 @@ public class DevelopmentConfig {
             );
 
             eventRepository.save(event);
+
+            Event event1 = new Event(
+                    UUID.randomUUID(),
+                    "Automated test event",
+                    100,
+                    LocalDate.now().plusDays(50)
+            );
+
+            eventRepository.save(event1);
         };
     }
 }

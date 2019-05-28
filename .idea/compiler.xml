@@ -6,14 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="reservation-domain" />
         <module name="reservation-infrastructure" />
+        <module name="reservation-ui" />
+        <module name="reservation-domain" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="java-reservation-system" target="11" />
       <module name="reservation-domain" target="11" />
       <module name="reservation-infrastructure" target="11" />
+      <module name="reservation-ui" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

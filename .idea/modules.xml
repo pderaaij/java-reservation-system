@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/java-reservation-system.iml" filepath="$PROJECT_DIR$/java-reservation-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/reservation-domain/reservation-domain.iml" filepath="$PROJECT_DIR$/reservation-domain/reservation-domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/reservation-infrastructure/reservation-infrastructure.iml" filepath="$PROJECT_DIR$/reservation-infrastructure/reservation-infrastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reservation-ui/reservation-ui.iml" filepath="$PROJECT_DIR$/reservation-ui/reservation-ui.iml" />
     </modules>
   </component>
 </project>
