@@ -23,7 +23,7 @@ public class EventTest {
     @Test
     public void testReserveForAnEventWithCapacityIsSuccessful() {
         eventUnderTest.assignCapacity(new Capacity(50));
-        ReservationAttempt reservationAttempt = eventUnderTest.makeReservation(new Reservation(4));
+        ReservationAttempt reservationAttempt = eventUnderTest.makeReservation(new Reservation(new EventId(UUID.randomUUID()),4));
         Assertions.assertEquals(50, eventUnderTest.getAvailableCapacity());
         Assertions.assertEquals(ReservationAttemptStatus.SUCCESS, reservationAttempt.getStatus());
     }
@@ -31,7 +31,7 @@ public class EventTest {
     @Test
     public void testReserveForAnEventWithoutCapacityFails() {
         eventUnderTest.assignCapacity(new Capacity(2));
-        ReservationAttempt reservationAttempt = eventUnderTest.makeReservation(new Reservation(4));
+        ReservationAttempt reservationAttempt = eventUnderTest.makeReservation(new Reservation(new EventId(UUID.randomUUID()),4));
 
         Assertions.assertEquals(ReservationAttemptStatus.FAILED, reservationAttempt.getStatus());
         Assertions.assertEquals("Event is sold out", reservationAttempt.getReason());
@@ -40,7 +40,7 @@ public class EventTest {
     @Test
     public void testInvalidReservationThrowsException() {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
-                eventUnderTest.makeReservation(new Reservation(0))
+                eventUnderTest.makeReservation(new Reservation(new EventId(UUID.randomUUID()),0))
         );
     }
 

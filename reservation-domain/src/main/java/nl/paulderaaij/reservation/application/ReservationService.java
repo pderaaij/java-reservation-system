@@ -20,7 +20,7 @@ public class ReservationService {
 
         var event = optionalEvent.get();
 
-        ReservationAttempt reservationAttempt = event.makeReservation(new Reservation(requestedTickets));
+        ReservationAttempt reservationAttempt = event.makeReservation(new Reservation(event.getId(), requestedTickets));
 
         eventRepository.store(event);
         return reservationAttempt;

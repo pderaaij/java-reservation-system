@@ -22,6 +22,10 @@ public class Event extends Aggregate implements Entity<Event> {
         this.eventDate = date;
     }
 
+    public EventId getId() {
+        return id;
+    }
+
     public void assignCapacity(Capacity capacity) {
         if (capacity.hasNonAvailable()) {
             throw new IllegalArgumentException("Can assign empty capacity to this event");

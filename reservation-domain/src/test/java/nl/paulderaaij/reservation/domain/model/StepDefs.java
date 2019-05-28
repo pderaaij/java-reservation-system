@@ -21,15 +21,16 @@ public class StepDefs {
 
     @When("I try to make a reservation")
     public void i_try_to_make_a_reservation() {
+        EventId eventId = new EventId(UUID.randomUUID());
         Event event = new Event(
-                new EventId(UUID.randomUUID()),
+                eventId,
                 new Title("Test"),
                 LocalDate.now()
         );
 
         event.assignCapacity(new Capacity(this.capacity));
 
-        this.attempt = event.makeReservation(new Reservation(4));
+        this.attempt = event.makeReservation(new Reservation(eventId,4));
     }
 
     @Then("It cancels my reservation")
