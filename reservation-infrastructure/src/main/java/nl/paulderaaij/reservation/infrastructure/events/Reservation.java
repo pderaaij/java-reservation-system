@@ -1,6 +1,8 @@
 package nl.paulderaaij.reservation.infrastructure.events;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.Entity;
@@ -11,6 +13,8 @@ import java.util.UUID;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Reservation {
 
     @Id

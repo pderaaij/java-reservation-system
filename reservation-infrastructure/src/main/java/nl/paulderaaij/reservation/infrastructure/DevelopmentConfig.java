@@ -2,6 +2,8 @@ package nl.paulderaaij.reservation.infrastructure;
 
 import nl.paulderaaij.reservation.infrastructure.events.Event;
 import nl.paulderaaij.reservation.infrastructure.events.EventRepository;
+import nl.paulderaaij.reservation.infrastructure.events.Reservation;
+import nl.paulderaaij.reservation.infrastructure.events.ReservationRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +15,7 @@ import java.util.UUID;
 public class DevelopmentConfig {
 
     @Bean
-    public CommandLineRunner dataLoader(EventRepository eventRepository) {
+    public CommandLineRunner dataLoader(EventRepository eventRepository, ReservationRepository reservationRepository) {
         return args -> {
             Event event = new Event(
                     UUID.fromString("f67270e4-00e5-4a37-b5d4-a2ee642e7e68"),
@@ -23,6 +25,13 @@ public class DevelopmentConfig {
             );
 
             eventRepository.save(event);
+
+            Reservation reservation = new Reservation(
+                    event,
+                    4
+            );
+
+            reservationRepository.save(reservation);
 
             Event event1 = new Event(
                     UUID.randomUUID(),

@@ -12,11 +12,13 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { EventsComponent } from './events/events.component';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventsComponent
+    EventsComponent,
+    EventDetailsComponent
   ],
   imports: [
     BrowserModule,
