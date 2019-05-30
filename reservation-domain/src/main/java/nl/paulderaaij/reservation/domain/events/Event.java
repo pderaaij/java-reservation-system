@@ -26,21 +26,25 @@ public class Event extends Aggregate implements Entity<Event> {
         return id;
     }
 
+    public int getAvailableCapacity() {
+        return capacity.getAvailableCapacity();
+    }
+
     public void assignCapacity(Capacity capacity) {
         if (capacity.hasNonAvailable()) {
-            throw new IllegalArgumentException("Can assign empty capacity to this event");
+            throw new IllegalArgumentException("Can't assign empty capacity to the event with name " + title);
         }
 
         this.capacity = capacity;
     }
 
-    public int getAvailableCapacity() {
-        return capacity.getAvailableCapacity();
-    }
-
     public ReservationAttempt makeReservation(Reservation reservation) {
         if (!reservation.isValid()) {
             throw new IllegalArgumentException("Reservation is invalid and can not be processed");
+        }
+
+        if (this.eventDate.isBefore(LocalDate.now())) {
+            throw new EventAlreadyTookPlaceException("Event '" + title + "' already took placed and new reservations can't be processed anymore");
         }
 
         if (reservation.getRequestedCapacity() > this.capacity.getAvailableCapacity()) {

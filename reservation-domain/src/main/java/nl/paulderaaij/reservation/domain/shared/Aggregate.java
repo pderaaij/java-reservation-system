@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 abstract public class Aggregate {
-    private List<DomainEvent> events = new ArrayList<>();
+    private final List<DomainEvent> events = new ArrayList<>();
 
     public void raiseEvent(DomainEvent event) {
         events.add(event);

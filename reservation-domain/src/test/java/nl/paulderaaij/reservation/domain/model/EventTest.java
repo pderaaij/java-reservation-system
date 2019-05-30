@@ -1,6 +1,8 @@
 package nl.paulderaaij.reservation.domain.model;
 
+import nl.paulderaaij.reservation.domain.events.EventAlreadyTookPlaceException;
 import nl.paulderaaij.reservation.domain.events.*;
+import nl.paulderaaij.reservation.helpers.A;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -47,5 +49,11 @@ public class EventTest {
     @Test
     public void testAssigningACapacityOfZeroThrowsException() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> eventUnderTest.assignCapacity(new Capacity(0)));
+    }
+
+    @Test
+    public void testReservingForAnEventThatHasPassedThrowsException() {
+        Event event = A.Event.withDate(LocalDate.now().minusDays(2)).build();
+        Assertions.assertThrows(EventAlreadyTookPlaceException.class, () -> event.makeReservation(new Reservation(event.getId(), 4)));
     }
 }

@@ -33,4 +33,9 @@ public class EventBuilder {
         this.capacity = requestedCapacity;
         return this;
     }
+
+    public EventBuilder withDate(LocalDate date) {
+        this.eventDate = date;
+        return this;
+    }
 }

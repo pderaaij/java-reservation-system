@@ -13,3 +13,9 @@ Feature: Reserve for an event
     When I try to make a reservation
     Then It successfully process my reservation
      And tells me I have bought tickets for the event
+
+  Scenario: Fails to reserve for an event that already took place
+    Given An event with a capacity of 100
+      And a date in the past
+    When I try to make a reservation
+    Then It tells me the event already took place

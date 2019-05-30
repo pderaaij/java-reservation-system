@@ -12,7 +12,9 @@ import java.util.UUID;
 
 public class StepDefs {
     private int capacity;
+    private LocalDate eventDate = LocalDate.now();
     private ReservationAttempt attempt;
+    private Exception capturedException;
 
     @Given("An event with a capacity of {int}")
     public void an_event_with_capacity(Integer capacity) {
@@ -25,12 +27,16 @@ public class StepDefs {
         Event event = new Event(
                 eventId,
                 new Title("Test"),
-                LocalDate.now()
+                eventDate
         );
 
         event.assignCapacity(new Capacity(this.capacity));
 
-        this.attempt = event.makeReservation(new Reservation(eventId,4));
+        try {
+            this.attempt = event.makeReservation(new Reservation(eventId, 4));
+        } catch (Exception e) {
+            this.capturedException = e;
+        }
     }
 
     @Then("It cancels my reservation")
@@ -51,5 +57,16 @@ public class StepDefs {
     @And("tells me I have bought tickets for the event")
     public void tellsMeIHaveBoughtTicketsForTheEvent() {
         Assertions.assertEquals("Here are your tickets", this.attempt.getReason());
+    }
+
+    @And("a date in the past")
+    public void aDateInThePast() {
+        this.eventDate = LocalDate.now().minusDays(1);
+    }
+
+    @Then("It tells me the event already took place")
+    public void itTellsMeTheEventAlreadyTookPlace() {
+        Assertions.assertNotNull(this.capturedException);
+        Assertions.assertEquals(this.capturedException.getClass(), EventAlreadyTookPlaceException.class);
     }
 }

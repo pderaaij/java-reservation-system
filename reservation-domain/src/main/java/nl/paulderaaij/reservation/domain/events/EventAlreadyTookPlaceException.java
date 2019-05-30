@@ -1,8 +1,7 @@
-package nl.paulderaaij.reservation.domain;
+package nl.paulderaaij.reservation.domain.events;
 
 public class EventAlreadyTookPlaceException extends RuntimeException {
-
-    public EventAlreadyTookPlaceException(String message) {
+    EventAlreadyTookPlaceException(String message) {
         super(message);
     }
 }
