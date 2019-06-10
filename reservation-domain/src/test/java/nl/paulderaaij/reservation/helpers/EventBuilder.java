@@ -11,8 +11,12 @@ import java.util.UUID;
 public class EventBuilder {
     private EventId eventId = new EventId(UUID.randomUUID());
     private Title title = new Title("Test Event");
-    private LocalDate eventDate = LocalDate.now();
+    private LocalDate eventDate = LocalDate.now().plusDays(1);
     private int capacity = 10;
+
+    void reset() {
+        this.eventDate = LocalDate.now().plusDays(1);
+    }
 
     public Event build() {
         Event event = new Event(
@@ -21,6 +25,7 @@ public class EventBuilder {
                 eventDate
         );
         event.assignCapacity(new Capacity(this.capacity));
+        reset();
         return event;
     }
 

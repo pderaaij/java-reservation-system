@@ -2,7 +2,9 @@ package nl.paulderaaij.reservation.infrastructure.events.repositories;
 
 import lombok.extern.slf4j.Slf4j;
 import nl.paulderaaij.reservation.domain.events.Event;
-import nl.paulderaaij.reservation.domain.events.*;
+import nl.paulderaaij.reservation.domain.events.EventId;
+import nl.paulderaaij.reservation.domain.events.ReservationForEventPlaced;
+import nl.paulderaaij.reservation.infrastructure.events.entities.EventFactory;
 import nl.paulderaaij.reservation.infrastructure.events.handlers.ReservationForEventPlacedHandler;
 import org.springframework.stereotype.Repository;
 
@@ -32,14 +34,15 @@ public class FacadeEventRepositoryImpl implements FacadeEventRepository {
         if (foundEvent.isEmpty()) {
             return Optional.empty();
         }
-        Event event = new Event(
-                new EventId(foundEvent.get().getId()),
-                new Title(foundEvent.get().getTitle()),
-                foundEvent.get().getDate()
+
+        nl.paulderaaij.reservation.infrastructure.events.entities.Event event = foundEvent.get();
+        Event domainEvent = EventFactory.createEvent(
+                event.getId(),
+                event.getTitle(),
+                event.getDate(),
+                event.getCapacity()
         );
 
-        event.assignCapacity(new Capacity(foundEvent.get().getCapacity()));
-
-        return Optional.of(event);
+        return Optional.of(domainEvent);
     }
 }

@@ -46,7 +46,9 @@ public class Event extends Aggregate implements Entity<Event> {
         }
 
         if (this.eventDate.isBefore(LocalDate.now())) {
-            throw new EventAlreadyTookPlaceException("Event '" + title + "' already took placed and new reservations can't be processed anymore");
+            throw new EventAlreadyTookPlaceException("Event '" + title + "' already took placed and new reservations can't be processed anymore. (" +
+                    this.eventDate +
+                ")");
         }
 
         if (reservation.getRequestedCapacity() > this.capacity.getAvailableCapacity()) {
