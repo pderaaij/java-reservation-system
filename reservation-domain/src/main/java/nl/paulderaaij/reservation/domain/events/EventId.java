@@ -3,7 +3,7 @@ package nl.paulderaaij.reservation.domain.events;
 import java.util.UUID;
 
 public class EventId {
-    UUID id;
+    private UUID id;
 
     public EventId(UUID id) {
         this.id = id;

@@ -1,9 +1,9 @@
 package nl.paulderaaij.reservation.infrastructure;
 
-import nl.paulderaaij.reservation.infrastructure.events.Event;
-import nl.paulderaaij.reservation.infrastructure.events.EventRepository;
-import nl.paulderaaij.reservation.infrastructure.events.Reservation;
-import nl.paulderaaij.reservation.infrastructure.events.ReservationRepository;
+import nl.paulderaaij.reservation.infrastructure.events.entities.Event;
+import nl.paulderaaij.reservation.infrastructure.events.repositories.EventRepository;
+import nl.paulderaaij.reservation.infrastructure.events.entities.Reservation;
+import nl.paulderaaij.reservation.infrastructure.events.repositories.ReservationRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

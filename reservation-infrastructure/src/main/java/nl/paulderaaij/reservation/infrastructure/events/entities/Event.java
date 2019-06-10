@@ -1,4 +1,4 @@
-package nl.paulderaaij.reservation.infrastructure.events;
+package nl.paulderaaij.reservation.infrastructure.events.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

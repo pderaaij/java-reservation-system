@@ -1,7 +1,7 @@
 package nl.paulderaaij.reservation.infrastructure;
 
 import nl.paulderaaij.reservation.application.ReservationService;
-import nl.paulderaaij.reservation.infrastructure.events.FacadeEventRepository;
+import nl.paulderaaij.reservation.infrastructure.events.repositories.FacadeEventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

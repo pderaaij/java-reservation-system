@@ -1,5 +1,7 @@
 package nl.paulderaaij.reservation.domain.events;
 
+import nl.paulderaaij.reservation.domain.events.exceptions.EventAlreadyTookPlaceException;
+import nl.paulderaaij.reservation.domain.events.exceptions.InvalidReservationException;
 import nl.paulderaaij.reservation.domain.shared.Aggregate;
 import nl.paulderaaij.reservation.domain.shared.Entity;
 
@@ -40,7 +42,7 @@ public class Event extends Aggregate implements Entity<Event> {
 
     public ReservationAttempt makeReservation(Reservation reservation) {
         if (!reservation.isValid()) {
-            throw new IllegalArgumentException("Reservation is invalid and can not be processed");
+            throw new InvalidReservationException("Reservation is invalid and can not be processed");
         }
 
         if (this.eventDate.isBefore(LocalDate.now())) {

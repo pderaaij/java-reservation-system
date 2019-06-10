@@ -1,4 +1,4 @@
-package nl.paulderaaij.reservation.infrastructure.events;
+package nl.paulderaaij.reservation.infrastructure.events.repositories;
 
 import lombok.extern.slf4j.Slf4j;
 import nl.paulderaaij.reservation.domain.events.Event;
@@ -27,7 +27,7 @@ public class FacadeEventRepositoryImpl implements FacadeEventRepository {
 
     @Override
     public Optional<Event> findEventById(EventId eventId) {
-        final Optional<nl.paulderaaij.reservation.infrastructure.events.Event> foundEvent = eventRepository.findById(eventId.getId());
+        final Optional<nl.paulderaaij.reservation.infrastructure.events.entities.Event> foundEvent = eventRepository.findById(eventId.getId());
 
         if (foundEvent.isEmpty()) {
             return Optional.empty();

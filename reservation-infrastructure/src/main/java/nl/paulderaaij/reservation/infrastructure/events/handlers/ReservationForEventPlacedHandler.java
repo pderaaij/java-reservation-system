@@ -2,10 +2,10 @@ package nl.paulderaaij.reservation.infrastructure.events.handlers;
 
 import nl.paulderaaij.reservation.domain.events.ReservationForEventPlaced;
 import nl.paulderaaij.reservation.domain.shared.DomainEventHandler;
-import nl.paulderaaij.reservation.infrastructure.events.Event;
-import nl.paulderaaij.reservation.infrastructure.events.EventRepository;
-import nl.paulderaaij.reservation.infrastructure.events.Reservation;
-import nl.paulderaaij.reservation.infrastructure.events.ReservationRepository;
+import nl.paulderaaij.reservation.infrastructure.events.entities.Event;
+import nl.paulderaaij.reservation.infrastructure.events.repositories.EventRepository;
+import nl.paulderaaij.reservation.infrastructure.events.entities.Reservation;
+import nl.paulderaaij.reservation.infrastructure.events.repositories.ReservationRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
@@ -13,8 +13,8 @@ import java.util.Optional;
 @Component
 public class ReservationForEventPlacedHandler implements DomainEventHandler<ReservationForEventPlaced> {
 
-    final EventRepository eventRepository;
-    final ReservationRepository reservationRepository;
+    private final EventRepository eventRepository;
+    private final ReservationRepository reservationRepository;
 
     public ReservationForEventPlacedHandler(EventRepository eventRepository, ReservationRepository reservationRepository) {
         this.eventRepository = eventRepository;
