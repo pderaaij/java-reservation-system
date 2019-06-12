@@ -62,10 +62,46 @@
             }
           }
         }
+      },
+      "post": {
+        "summary": "Place a new reservation for the requested event",
+        "tags": [
+          "make-reservation"
+        ],
+        "description": "",
+        "operationId": "makeReservation",
+        "responses": {
+          "201": {
+            "description": "successfully placed a reservation for the event"
+          },
+          "400": {
+            "description": "Not able to process the request due to invalid parameters"
+          },
+          "404": {
+            "description": "Event not found"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/EventReservation"
+        }
       }
     }
   },
   "components": {
+    "requestBodies": {
+      "EventReservation": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "requestedTickets": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
     "schemas": {
       "AvailableEvent": {
         "type": "object",

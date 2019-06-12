@@ -24,7 +24,7 @@ public class EventTest {
     }
 
     @Test
-    public void testReserveForAnEventWithCapacityIsSuccessful() {
+    public void testReserveForAnEventWithCapacityIsSuccessful() throws EventAlreadyTookPlaceException {
         eventUnderTest.assignCapacity(new Capacity(50));
         ReservationAttempt reservationAttempt = eventUnderTest.makeReservation(new Reservation(new EventId(UUID.randomUUID()),4));
         Assertions.assertEquals(50, eventUnderTest.getAvailableCapacity());
@@ -32,7 +32,7 @@ public class EventTest {
     }
 
     @Test
-    public void testReserveForAnEventWithoutCapacityFails() {
+    public void testReserveForAnEventWithoutCapacityFails() throws EventAlreadyTookPlaceException {
         eventUnderTest.assignCapacity(new Capacity(2));
         ReservationAttempt reservationAttempt = eventUnderTest.makeReservation(new Reservation(new EventId(UUID.randomUUID()),4));
 

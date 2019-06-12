@@ -1,6 +1,8 @@
 package nl.paulderaaij.reservation.application;
 
+import nl.paulderaaij.reservation.application.exceptions.EventNotFoundException;
 import nl.paulderaaij.reservation.domain.events.*;
+import nl.paulderaaij.reservation.domain.events.exceptions.EventAlreadyTookPlaceException;
 import nl.paulderaaij.reservation.helpers.A;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -13,7 +15,7 @@ import static org.mockito.Mockito.when;
 public class ReservationServiceTest {
 
     @Test
-    public void testReservingTicketsForEvent() {
+    public void testReservingTicketsForEvent() throws EventNotFoundException, EventAlreadyTookPlaceException {
         EventRepository eventRepository = mock(EventRepository.class);
         EventId eventId = A.EventId;
         Event testEvent = A.Event.withId(eventId.getId()).withCapacityOf(5).build();

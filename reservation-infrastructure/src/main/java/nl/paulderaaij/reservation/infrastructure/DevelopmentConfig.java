@@ -41,6 +41,17 @@ public class DevelopmentConfig {
             );
 
             eventRepository.save(event1);
+
+            Event event2 = new Event(
+                    UUID.fromString("316E5064-5884-46B9-BBE4-D34B0DE85EA7"),
+                    "Automated test event in the past",
+                    222,
+                    LocalDate.now().minusDays(50)
+            );
+
+            eventRepository.save(event2);
+
+
         };
     }
 }

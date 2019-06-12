@@ -40,7 +40,7 @@ public class Event extends Aggregate implements Entity<Event> {
         this.capacity = capacity;
     }
 
-    public ReservationAttempt makeReservation(Reservation reservation) {
+    public ReservationAttempt makeReservation(Reservation reservation) throws EventAlreadyTookPlaceException {
         if (!reservation.isValid()) {
             throw new InvalidReservationException("Reservation is invalid and can not be processed");
         }
