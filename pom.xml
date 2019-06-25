@@ -18,5 +18,32 @@
         <module>reservation-domain</module>
         <module>reservation-infrastructure</module>
         <module>reservation-ui</module>
+        <module>reservation-documentation</module>
     </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>nl.paulderaaij</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.0.1-SNAPSHOT</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
