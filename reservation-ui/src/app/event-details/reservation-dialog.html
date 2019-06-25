@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Reservation for event</h1>
+<div mat-dialog-content>
+  <p>How many tickets needs to be reserved?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.reservedTickets">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.reservedTickets">Ok</button>
+</div>
