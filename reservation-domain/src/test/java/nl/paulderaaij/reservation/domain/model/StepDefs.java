@@ -94,7 +94,7 @@ public class StepDefs {
 
         this.event.assignCapacity(new Capacity(this.capacity));
 
-        Reservation reservation = new Reservation(eventId, this.reservationTickets).withReservationId(UUID.fromString(id));
+        Reservation reservation = new Reservation(eventId, this.reservationTickets).withReservationId(ReservationId.fromString(id));
         try {
             this.event.makeReservation(reservation);
         } catch (EventAlreadyTookPlaceException e) {
@@ -106,7 +106,7 @@ public class StepDefs {
     @Then("It successfully cancels my reservation")
     public void itSuccessfullyCancelsMyReservation() {
         try {
-            this.event.cancelReservation(UUID.fromString(this.reservationId));
+            this.event.cancelReservation(ReservationId.fromString(this.reservationId));
         } catch (ReservationNotFoundException | EventAlreadyTookPlaceException e) {
             this.capturedException = e;
         }

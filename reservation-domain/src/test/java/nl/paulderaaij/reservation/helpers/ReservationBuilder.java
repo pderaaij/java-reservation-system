@@ -2,13 +2,14 @@ package nl.paulderaaij.reservation.helpers;
 
 import nl.paulderaaij.reservation.domain.events.EventId;
 import nl.paulderaaij.reservation.domain.events.Reservation;
+import nl.paulderaaij.reservation.domain.events.ReservationId;
 
 import java.util.UUID;
 
 public class ReservationBuilder {
     private int requestedCapacity = 4;
     private EventId eventId = new EventId(UUID.randomUUID());
-    private UUID reservationId = null;
+    private ReservationId reservationId = null;
 
     private void reset() {
         this.eventId = new EventId(UUID.randomUUID());
@@ -34,12 +35,7 @@ public class ReservationBuilder {
         return this;
     }
 
-    public ReservationBuilder withRequestedCapacity(int requestedCapacity) {
-        this.requestedCapacity = requestedCapacity;
-        return this;
-    }
-
-    public ReservationBuilder withReservationId(UUID reservationId) {
+    public ReservationBuilder withReservationId(ReservationId reservationId) {
         this.reservationId = reservationId;
         return this;
     }

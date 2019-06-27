@@ -9,7 +9,6 @@ import nl.paulderaaij.reservation.domain.shared.Entity;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 public class Event extends Aggregate implements Entity<Event> {
 
@@ -18,7 +17,7 @@ public class Event extends Aggregate implements Entity<Event> {
     private LocalDate eventDate;
     private Capacity capacity;
 
-    private Map<UUID, Reservation> reservations = new HashMap<>();
+    private Map<ReservationId, Reservation> reservations = new HashMap<>();
 
     public Event(EventId eventId, Title title, LocalDate date) {
         if (eventId == null) {
@@ -65,7 +64,7 @@ public class Event extends Aggregate implements Entity<Event> {
         return new ReservationAttempt(ReservationAttemptStatus.SUCCESS, "Here are your tickets");
     }
 
-    public void cancelReservation(UUID reservationId) throws ReservationNotFoundException, EventAlreadyTookPlaceException {
+    public void cancelReservation(ReservationId reservationId) throws ReservationNotFoundException, EventAlreadyTookPlaceException {
         if (!this.reservations.containsKey(reservationId)) {
             throw ReservationNotFoundException.missingForEventWithId(this.title.getName(), reservationId);
         }

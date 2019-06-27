@@ -6,7 +6,6 @@ import nl.paulderaaij.reservation.domain.events.exceptions.EventAlreadyTookPlace
 import nl.paulderaaij.reservation.domain.events.exceptions.ReservationNotFoundException;
 
 import java.util.Optional;
-import java.util.UUID;
 
 public class ReservationService {
     private EventRepository eventRepository;
@@ -30,7 +29,7 @@ public class ReservationService {
         return reservationAttempt;
     }
 
-    public void cancelReservation(EventId eventId, UUID reservationId) throws EventNotFoundException, ReservationNotFoundException, EventAlreadyTookPlaceException {
+    public void cancelReservation(EventId eventId, ReservationId reservationId) throws EventNotFoundException, ReservationNotFoundException, EventAlreadyTookPlaceException {
         Optional<Event> optionalEvent = eventRepository.findEventById(eventId);
 
         if (optionalEvent.isEmpty()) {

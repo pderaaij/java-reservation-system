@@ -1,6 +1,6 @@
 package nl.paulderaaij.reservation.domain.events.exceptions;
 
-import java.util.UUID;
+import nl.paulderaaij.reservation.domain.events.ReservationId;
 
 public class ReservationNotFoundException extends Exception {
 
@@ -8,7 +8,7 @@ public class ReservationNotFoundException extends Exception {
         super(message);
     }
 
-    public static ReservationNotFoundException missingForEventWithId(String eventTitle, UUID reservationId) {
+    public static ReservationNotFoundException missingForEventWithId(String eventTitle, ReservationId reservationId) {
         return new ReservationNotFoundException("Can not find a reservation for event " + eventTitle + " with the id: " + reservationId);
     }
 }

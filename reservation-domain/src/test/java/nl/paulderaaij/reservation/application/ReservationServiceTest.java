@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
-import java.util.UUID;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -33,7 +32,7 @@ public class ReservationServiceTest {
     void testCancellingAReservationForAnEvent() throws EventNotFoundException, EventAlreadyTookPlaceException, ReservationNotFoundException {
         EventRepository eventRepository = mock(EventRepository.class);
         EventId eventId = A.EventId;
-        UUID reservationId = UUID.randomUUID();
+        ReservationId reservationId = ReservationId.random();
         Event testEvent = A.Event
                 .withId(eventId.getId())
                 .withCapacityOf(4)

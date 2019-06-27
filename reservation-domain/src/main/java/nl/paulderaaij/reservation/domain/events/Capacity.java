@@ -1,7 +1,6 @@
 package nl.paulderaaij.reservation.domain.events;
 
 import java.util.Map;
-import java.util.UUID;
 
 public class Capacity {
 
@@ -11,12 +10,17 @@ public class Capacity {
         this.tickets = tickets;
     }
 
-    public boolean hasNonAvailable(Map<UUID, Reservation> reservations) {
+    public boolean hasNonAvailable(Map<ReservationId, Reservation> reservations) {
         return getAvailableCapacity(reservations) <= 0;
     }
 
-    public int getAvailableCapacity(Map<UUID, Reservation> reservations) {
-        int reservedTickets = reservations.values().stream().map(Reservation::getRequestedCapacity).mapToInt(Integer::intValue).sum();
+    public int getAvailableCapacity(Map<ReservationId, Reservation> reservations) {
+        int reservedTickets = reservations
+                .values()
+                .stream()
+                .map(Reservation::getRequestedCapacity)
+                .mapToInt(Integer::intValue)
+                .sum();
 
         return tickets - reservedTickets;
     }
