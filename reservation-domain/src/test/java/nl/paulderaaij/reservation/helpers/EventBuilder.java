@@ -1,9 +1,7 @@
 package nl.paulderaaij.reservation.helpers;
 
-import nl.paulderaaij.reservation.domain.events.Capacity;
-import nl.paulderaaij.reservation.domain.events.Event;
-import nl.paulderaaij.reservation.domain.events.EventId;
-import nl.paulderaaij.reservation.domain.events.Title;
+import nl.paulderaaij.reservation.domain.events.*;
+import nl.paulderaaij.reservation.domain.events.exceptions.EventAlreadyTookPlaceException;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -12,10 +10,13 @@ public class EventBuilder {
     private EventId eventId = new EventId(UUID.randomUUID());
     private Title title = new Title("Test Event");
     private LocalDate eventDate = LocalDate.now().plusDays(1);
+    private Reservation reservation = null;
     private int capacity = 10;
 
     void reset() {
+        this.eventId = new EventId(UUID.randomUUID());
         this.eventDate = LocalDate.now().plusDays(1);
+        this.reservation = null;
     }
 
     public Event build() {
@@ -25,6 +26,15 @@ public class EventBuilder {
                 eventDate
         );
         event.assignCapacity(new Capacity(this.capacity));
+
+        if (this.reservation != null) {
+            try {
+                event.makeReservation(this.reservation);
+            } catch (EventAlreadyTookPlaceException e) {
+                e.printStackTrace();
+            }
+        }
+
         reset();
         return event;
     }
@@ -41,6 +51,11 @@ public class EventBuilder {
 
     public EventBuilder withDate(LocalDate date) {
         this.eventDate = date;
+        return this;
+    }
+
+    public EventBuilder withReservation(Reservation reservation) {
+        this.reservation = reservation;
         return this;
     }
 }

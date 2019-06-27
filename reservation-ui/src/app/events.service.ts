@@ -28,7 +28,7 @@ export class EventsService {
   // TODO: improve: error handling
   makeReservationForEvent(eventId: string, reservedTickets: number) {
     let body = {
-      eventId: eventId,
+      eventId: eventId + "-1",
       requestedTickets: reservedTickets
     };
     return this.httpClient

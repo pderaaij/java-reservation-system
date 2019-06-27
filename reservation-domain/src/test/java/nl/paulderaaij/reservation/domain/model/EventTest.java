@@ -27,7 +27,7 @@ public class EventTest {
     public void testReserveForAnEventWithCapacityIsSuccessful() throws EventAlreadyTookPlaceException {
         eventUnderTest.assignCapacity(new Capacity(50));
         ReservationAttempt reservationAttempt = eventUnderTest.makeReservation(new Reservation(new EventId(UUID.randomUUID()),4));
-        Assertions.assertEquals(50, eventUnderTest.getAvailableCapacity());
+        Assertions.assertEquals(46, eventUnderTest.getAvailableCapacity());
         Assertions.assertEquals(ReservationAttemptStatus.SUCCESS, reservationAttempt.getStatus());
     }
 

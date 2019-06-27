@@ -8,4 +8,6 @@ public class A {
     public static final EventBuilder Event = new EventBuilder();
 
     public static final EventId EventId = new EventId(UUID.randomUUID());
+
+    public static final ReservationBuilder Reservation = new ReservationBuilder();
 }
