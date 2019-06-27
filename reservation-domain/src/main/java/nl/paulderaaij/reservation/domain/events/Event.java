@@ -75,4 +75,12 @@ public class Event extends Aggregate implements Entity<Event> {
 
         this.reservations.remove(reservationId);
     }
+
+    public boolean reservationsAllowed() {
+        if (this.eventDate.isBefore(LocalDate.now())) {
+            return false;
+        }
+
+        return this.capacity.getAvailableCapacity(this.reservations) > 0;
+    }
 }
